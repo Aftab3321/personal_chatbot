@@ -51,27 +51,23 @@ llm = ChatGroq(
 # Use Open-Source Embeddings for Retrieval
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 # Persist ChromaDB for Vector Search
-directory_cdb = './chromadb'
 
-if os.path.exists(directory_cdb) and os.listdir(directory_cdb):
-    chroma_db = Chroma(persist_directory=directory_cdb, embedding_function=embedding_model)
-else:
-    # Load your personal documents/texts for the first time only
-    from langchain.schema import Document
-    with open('https://github.com/Aftab3321/personal_chatbot/tree/main/personal_info.json', 'r') as file:
-        json_data = json.load(file)
-    # Ensure it's a list of dicts with "page_content"
-    documents = []
-    for item in json_data:
-        # Each item can be a string or dict with extra metadata
-        if isinstance(item, str):
-            documents.append(Document(page_content=item))
-        elif isinstance(item, dict) and "page_content" in item:
-            documents.append(Document(page_content=item["page_content"], metadata=item.get("metadata", {})))
-        else:
-            raise ValueError("Invalid format in personal_info.json. Each item must be a string or a dict with 'page_content'.")
+# Load your personal documents/texts for the first time only
+from langchain.schema import Document
+with open('https://github.com/Aftab3321/personal_chatbot/tree/main/personal_info.json', 'r') as file:
+    json_data = json.load(file)
+# Ensure it's a list of dicts with "page_content"
+documents = []
+for item in json_data:
+    # Each item can be a string or dict with extra metadata
+    if isinstance(item, str):
+        documents.append(Document(page_content=item))
+    elif isinstance(item, dict) and "page_content" in item:
+        documents.append(Document(page_content=item["page_content"], metadata=item.get("metadata", {})))
+    else:
+        raise ValueError("Invalid format in personal_info.json. Each item must be a string or a dict with 'page_content'.")
 
-    chroma_db = Chroma.from_documents(documents, embedding_model)
+chroma_db = Chroma.from_documents(documents, embedding_model)
 
 # Configure Memory for Conversation
 conversational_memory = ConversationBufferWindowMemory(
@@ -155,3 +151,4 @@ if user_input:
     # Save assistant reply
 
     st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
+
