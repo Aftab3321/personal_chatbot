@@ -1,0 +1,8 @@
+streamlit
+requests
+langchain
+langchain-groq
+langchain-community
+time
+chromadb
+sentence-transformers

@@ -1,0 +1,75 @@
+{
+  "name": "Aftab Ahmed",
+  "location": "Jacobabad, Pakistan",
+  "experience": {
+    "web_development": {
+      "years": 3,
+      "skills": ["HTML", "CSS", "JavaScript", "Figma to HTML", "AJAX", "Streamlit", "WordPress"],
+      "platforms": ["Fiverr (Level 2 Seller)"],
+      "specialization": "Pixel-perfect Figma to HTML conversion",
+      "clients": "Mostly satisfied"
+    },
+    "research": {
+      "interests": [
+        "Research Methodology",
+        "Systematic Literature Reviews (SLRs)",
+        "Generative AI",
+        "Natural Language Processing",
+        "LLMs",
+        "RAG pipelines"
+      ],
+      "projects": [
+        "E-commerce chatbot using RAG and policy document scraping",
+        "Academic introduction generator using fine-tuned small LLMs",
+        "Literature Gap Identifier using RAG",
+        "Text classification using prompt, LoRA, and QLoRA approaches"
+      ],
+      "tools": [
+        "LangChain",
+        "ChromaDB",
+        "SentenceTransformers",
+        "LoRA/QLoRA",
+        "Streamlit",
+        "OpenAI API",
+        "Colab with T4 GPU"
+      ]
+    }
+  },
+  "devices": {
+    "laptop": {
+      "brand": "Dell",
+      "cpu": "Intel i5-6300HQ",
+      "ram": "16GB DDR4",
+      "storage": "256GB M.2 SSD"
+    }
+  },
+  "fitness_log": {
+    "tracking": "true",
+    "activities": ["Jogging", "Gym (Triceps workout)"],
+    "metrics": ["Water intake", "Meals", "Sleep", "Weather"]
+  },
+  "projects": {
+    "websites": [
+      {
+        "name": "Afrigold Holdings",
+        "stack": "WordPress",
+        "features": [
+          "Mobile-first design",
+          "Loan calculator",
+          "WhatsApp integration",
+          "SEO optimization"
+        ]
+      },
+      {
+        "name": "Sokokuu.Africa",
+        "type": "CS-Cart Multi-Vendor revamp",
+        "phases": ["UX/UI customization", "Mobile app (future)", "AI tool integration"]
+      }
+    ]
+  },
+  "goals": {
+    "create_personal_assistant": "true",
+    "query_only_personal_data": "true",
+    "restrict_access_to_non-personal_data": "true"
+  }
+}
